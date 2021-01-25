@@ -29,6 +29,21 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   // reset the website body with the new html output
+  if (variables.name === null) {
+    variables.name = "Welcome";
+  }
+  if (variables.lastname === null) {
+    variables.lastname = "to my program";
+  }
+  if (variables.role === null) {
+    variables.role = "Web Developer";
+  }
+  if (variables.city === null) {
+    variables.city = "San Jose, Perez Zeledon";
+  }
+  if (variables.country === null) {
+    variables.country = "Costa Rica";
+  }
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
@@ -52,14 +67,16 @@ window.onload = function() {
   window.variables = {
     includeCover: true,
     // this is the url of the image that will used as background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background:
+      "https://pbs.twimg.com/profile_banners/1053685535745687553/1607993850/1500x500",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL:
+      "https://scontent.fsyq5-1.fna.fbcdn.net/v/t1.0-9/121989666_1569896036526749_3486896342093443656_o.jpg?_nc_cat=106&ccb=2&_nc_sid=09cbfe&_nc_ohc=h0Zkjv8256wAX-_3Eep&_nc_ht=scontent.fsyq5-1.fna&oh=77809c205ae26ab3423641490cbe1c63&oe=603330CC",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: "oscars97",
     linkedin: null,
     instagram: null,
     name: null,
